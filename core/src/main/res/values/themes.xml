@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.TestStore" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimaryText">@color/black</item>
+        <item name="colorBackgroundTextInputLayout">@color/light_grey</item>
+        <item name="colorHintTextInputLayout">@color/grey</item>
+        <item name="colorBgInactivePrimaryButton">@color/light_pink</item>
+        <item name="colorBgActivePrimaryButton">@color/pink</item>
+        <item name="colorCaptionText">@color/grey</item>
+        <item name="colorBottomNavBarIcon">@color/pink</item>
+        <item name="colorBottomNavBarText">@color/pink</item>
+    </style>
+</resources>

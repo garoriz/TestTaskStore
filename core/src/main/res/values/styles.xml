@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text" parent="TextAppearance.AppCompat" />
+
+    <style name="Text.Size16">
+        <item name="android:textSize">@dimen/size16</item>
+    </style>
+
+    <style name="Text.Size16.Primary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Size16.Primary.RobotoMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxCornerRadiusBottomEnd">@dimen/x1</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/x1</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/x1</item>
+        <item name="boxCornerRadiusTopStart">@dimen/x1</item>
+        <item name="boxStrokeWidth">@dimen/x0</item>
+        <item name="boxBackgroundColor">@color/light_grey</item>
+        <item name="hintTextColor">@color/grey</item>
+        <item name="boxStrokeWidthFocused">@dimen/x0</item>
+        <item name="endIconMode">custom</item>
+    </style>
+
+    <style name="PhoneNumberEditText" parent="">
+        <item name="android:inputType">phone</item>
+        <item name="mask">+7 999 999-99-99</item>
+        <item name="placeholder">*</item>
+    </style>
+
+    <style name="PrimaryMaterialButton">
+        <item name="cornerRadius">@dimen/x1</item>
+        <item name="backgroundTint">@color/light_pink</item>
+        <item name="android:textSize">@dimen/size14</item>
+    </style>
+
+    <style name="Text.Size10">
+        <item name="android:textSize">@dimen/size10</item>
+    </style>
+
+    <style name="Text.Size10.Caption">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorPrimaryText" format="color" />
+    <attr name="colorBackgroundTextInputLayout" format="color" />
+    <attr name="colorHintTextInputLayout" format="color" />
+    <attr name="colorBgInactivePrimaryButton" format="color" />
+    <attr name="colorBgActivePrimaryButton" format="color" />
+    <attr name="colorCaptionText" format="color" />
+    <attr name="colorBottomNavBarIcon" format="color" />
+    <attr name="colorBottomNavBarText" format="color" />
+
+    <declare-styleable name="MaskedEditText">
+        <attr name="mask" format="string" />
+        <attr name="placeholder" format="string" />
+    </declare-styleable>
+</resources>

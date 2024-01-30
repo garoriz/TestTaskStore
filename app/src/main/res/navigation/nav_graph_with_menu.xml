@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_with_menu"
+    app:startDestination="@id/navigation_main">
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.garif.main_feature.presentation.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/navigation_catalog"
+        android:name="com.garif.main_feature.presentation.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.garif.main_feature.presentation.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/navigation_discounts"
+        android:name="com.garif.main_feature.presentation.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.garif.main_feature.presentation.MainFragment"
+        android:label="MainFragment" />
+</navigation>

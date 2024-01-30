@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.garif.teststore.presentation.RegistrationFragment">
+
+    <TextView
+        android:id="@+id/tv_sign_in"
+        style="@style/Text.Size16.Primary.RobotoMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x2"
+        android:text="@string/signing_in"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_name"
+        style="@style/TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x17_5"
+        app:layout_constraintTop_toBottomOf="@id/tv_sign_in">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/name"
+            android:paddingVertical="@dimen/x1_5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_surname"
+        style="@style/TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x2"
+        app:layout_constraintTop_toBottomOf="@id/til_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiet_surname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/surname"
+            android:paddingVertical="@dimen/x1_5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_phone_number"
+        style="@style/TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x2"
+        app:layout_constraintTop_toBottomOf="@id/til_surname">
+
+        <com.garif.core.util.MaskedEditText
+            android:id="@+id/tiet_phone_number"
+            style="@style/PhoneNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="@string/phone_number"
+            android:paddingVertical="@dimen/x1_5" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sign_in"
+        style="@style/PrimaryMaterialButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x4"
+        android:clickable="false"
+        android:paddingVertical="@dimen/x2"
+        android:text="@string/sign_in"
+        app:layout_constraintTop_toBottomOf="@id/til_phone_number" />
+
+    <TextView
+        android:id="@+id/tv_sign_in_description_part_1"
+        style="@style/Text.Size10.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in_description_part_1"
+        android:layout_marginBottom="@dimen/x0_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_sign_in_description_part_2" />
+
+    <TextView
+        android:id="@+id/tv_sign_in_description_part_2"
+        style="@style/Text.Size10.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x1_5"
+        android:text="@string/sign_in_description_part_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
