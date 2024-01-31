@@ -1,6 +1,7 @@
 package com.garif.teststore
 
 import android.content.Context
+import com.garif.main_feature.di.MainFeatureComponent
 import com.garif.teststore.di.RegistrationFeatureComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -10,6 +11,8 @@ interface AppComponent {
     fun inject(mainActivity: MainActivity)
 
     fun createRegistrationComponent(): RegistrationFeatureComponent
+
+    fun createMainComponent(): MainFeatureComponent
 
 
     @Component.Factory

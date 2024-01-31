@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="gone"
     tools:context="com.garif.teststore.presentation.RegistrationFragment">
 
     <TextView
@@ -89,11 +91,11 @@
         style="@style/Text.Size10.Caption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_in_description_part_1"
         android:layout_marginBottom="@dimen/x0_25"
+        android:text="@string/sign_in_description_part_1"
+        app:layout_constraintBottom_toTopOf="@id/tv_sign_in_description_part_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_sign_in_description_part_2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tv_sign_in_description_part_2"

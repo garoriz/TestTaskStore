@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.view.View.OnFocusChangeListener
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -44,6 +45,8 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
 
         initObservers()
 
+        viewModel.onGetUser()
+
         with(binding) {
             setListeners(tilName, tietName, R.string.name)
             setListeners(tilSurname, tietSurname, R.string.surname)
@@ -80,6 +83,21 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
     }
 
     private fun initObservers() {
+        viewModel.user.observe(viewLifecycleOwner) { it ->
+            it.fold(onSuccess = {
+                if (it != null) {
+                    val intent = Intent(requireActivity(), MainActivityWithMenu::class.java)
+                    intent.putExtra(getString(com.garif.core.R.string.is_load_catalog), true)
+                    startActivity(intent)
+                } else {
+                    binding.fragment.isVisible = true
+                }
+            }, onFailure = {
+                binding.fragment.isVisible = true
+                Log.e("e", it.message.toString())
+            })
+        }
+
         viewModel.error.observe(viewLifecycleOwner) {
             Log.e("e", it.message.toString())
         }
