@@ -48,8 +48,8 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
         viewModel.onGetUser()
 
         with(binding) {
-            setListeners(tilName, tietName, R.string.name)
-            setListeners(tilSurname, tietSurname, R.string.surname)
+            setListeners(tilName, tietName, com.garif.core.R.string.name)
+            setListeners(tilSurname, tietSurname, com.garif.registration_feature.R.string.surname)
             tietPhoneNumber.doOnTextChanged { text, _, _, _ ->
                 if (text != null) {
                     if (text.isNotEmpty()) {

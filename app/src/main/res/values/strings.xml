@@ -43,16 +43,4 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="main">Главная</string>
-    <string name="catalog">Каталог</string>
-    <string name="cart">Корзина</string>
-    <string name="discounts">Акции</string>
-    <string name="profile">Профиль</string>
-    <string name="sign_in">Войти</string>
-    <string name="signing_in">Вход</string>
-    <string name="name">Имя</string>
-    <string name="surname">Фамилия</string>
-    <string name="phone_number">Номер телефона</string>
-    <string name="sign_in_description_part_1">Нажимая кнопку “Войти”, Вы принимаете</string>
-    <string name="sign_in_description_part_2"><u>условия программы лояльности</u></string>
 </resources>

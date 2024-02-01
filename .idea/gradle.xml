@@ -13,7 +13,9 @@
             <option value="$PROJECT_DIR$/catalog-feature" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/database" />
+            <option value="$PROJECT_DIR$/item-feature" />
             <option value="$PROJECT_DIR$/main-feature" />
+            <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/registration-feature" />
           </set>
         </option>

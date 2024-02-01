@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_with_menu">
 
     <fragment
@@ -9,7 +10,11 @@
     <fragment
         android:id="@+id/navigation_catalog"
         android:name="com.garif.cataog_feature.presentation.CatalogFragment"
-        android:label="CatalogFragment" />
+        android:label="CatalogFragment" >
+        <action
+            android:id="@+id/action_navigation_catalog_to_itemFragment"
+            app:destination="@id/itemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_cart"
         android:name="com.garif.main_feature.presentation.MainFragment"
@@ -22,4 +27,8 @@
         android:id="@+id/navigation_profile"
         android:name="com.garif.main_feature.presentation.MainFragment"
         android:label="MainFragment" />
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.garif.item_feature.presentation.ItemFragment"
+        android:label="ItemFragment" />
 </navigation>

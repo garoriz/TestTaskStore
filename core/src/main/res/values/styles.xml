@@ -54,4 +54,98 @@
     <style name="NavigationView">
         <item name="android:background">@drawable/bottom_navigation_view_background</item>
     </style>
+
+    <style name="Text.Size14">
+        <item name="android:textSize">@dimen/size14</item>
+    </style>
+
+    <style name="Text.Size14.Text">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="MaterialCardViewWithoutBg">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color_selector</item>
+        <item name="android:textColor">@color/chip_text_color_selector</item>
+        <item name="chipStrokeWidth">@dimen/x0</item>
+        <item name="android:radius">@dimen/x12_5</item>
+    </style>
+
+    <style name="ChipGroup">
+        <item name="singleSelection">true</item>
+    </style>
+
+    <style name="VerticalRecyclerView" parent="">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="TabLayoutPhoto">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="tabGravity">center</item>
+        <item name="tabIndicatorHeight">@dimen/x0</item>
+    </style>
+
+    <style name="CardViewPhoto">
+        <item name="cardElevation">@dimen/x0</item>
+    </style>
+
+    <style name="Text.Size9">
+        <item name="android:textSize">@dimen/size9</item>
+    </style>
+
+    <style name="Text.Size9.Price">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="Text.Size14.Primary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Size14.Primary.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+    
+    <style name="DiscountMaterialCardView">
+        <item name="cardCornerRadius">@dimen/x0_5</item>
+        <item name="cardBackgroundColor">@color/pink</item>
+        <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="Text.Size9.Discount">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size12">
+        <item name="android:textSize">@dimen/size12</item>
+    </style>
+
+    <style name="Text.Size12.Primary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Size12.Primary.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size10.Text">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="Text.Size9.Rating">
+        <item name="android:textColor">@color/orange</item>
+    </style>
+
+    <style name="Text.Size9.Caption">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="ItemMaterialCardView">
+        <item name="cardCornerRadius">@dimen/x1</item>
+        <item name="strokeWidth">@dimen/x0_125</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
 </resources>

@@ -59,6 +59,16 @@ dependencies {
     implementation("androidx.room:room-ktx:${room}")
     kapt("androidx.room:room-compiler:${room}")
 
+    // region Network
+    val retrofit = "2.9.0"
+    implementation("com.squareup.retrofit2:retrofit:${retrofit}")
+    implementation("com.squareup.retrofit2:converter-gson:${retrofit}")
+
+    val okhttp = "4.9.3"
+    implementation("com.squareup.okhttp3:okhttp:${okhttp}")
+    debugImplementation("com.squareup.okhttp3:logging-interceptor:${okhttp}")
+    // endregion
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -68,4 +78,6 @@ dependencies {
     implementation(project(":database"))
     implementation(project(":main-feature"))
     implementation(project(":catalog-feature"))
+    implementation(project(":network"))
+    implementation(project(":item-feature"))
 }

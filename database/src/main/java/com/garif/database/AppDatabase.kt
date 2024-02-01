@@ -4,12 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.garif.database.dao.ItemDao
 import com.garif.database.dao.UserDao
+import com.garif.database.model.Item
 import com.garif.database.model.User
 
-@Database(entities = [User::class], version = 1)
+@Database(entities = [User::class, Item::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun itemDao(): ItemDao
 
     companion object {
 
