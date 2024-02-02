@@ -58,6 +58,7 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
         }
 
         initObservers()
+        viewModel.onGetLikedItem()
         viewModel.onGetItems()
     }
 
@@ -130,21 +131,9 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
     }
 
     private fun initObservers() {
-        viewModel.items.observe(viewLifecycleOwner) { it ->
-            it.fold(onSuccess = { responseItems ->
-                itemsListAdapter = ItemListAdapter({
-                    navigate(R.id.action_navigation_catalog_to_itemFragment)
-                }, {
-                    viewModel.onSaveItem(com.garif.database.model.Item(it))
-                }, this@CatalogFragment)
-
-                binding.items.run {
-                    adapter = itemsListAdapter
-                }
-
-                allItemList.addAll(responseItems)
-                sortedAndFilteredItemList.addAll(allItemList.sortedByDescending { it.rating })
-                itemsListAdapter?.submitList(sortedAndFilteredItemList)
+        viewModel.likedItems.observe(viewLifecycleOwner) { it ->
+            it.fold(onSuccess = {
+                initItemsObservers(it)
             }, onFailure = {
                 Log.e("e", it.message.toString())
             })
@@ -156,6 +145,30 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
                     showMessage(com.garif.core.R.string.error)
                 }
             }
+        }
+    }
+
+    private fun initItemsObservers(likedItems: List<com.garif.database.model.Item>) {
+        viewModel.items.observe(viewLifecycleOwner) { items ->
+            items.fold(onSuccess = { responseItems ->
+                itemsListAdapter = ItemListAdapter({
+                    navigate(R.id.action_navigation_catalog_to_itemFragment, data = it)
+                }, {
+                    viewModel.onSaveItem(com.garif.database.model.Item(it))
+                }, this@CatalogFragment, likedItems)
+
+                binding.items.run {
+                    adapter = itemsListAdapter
+                }
+
+                if (allItemList.isEmpty()) {
+                    allItemList.addAll(responseItems)
+                    sortedAndFilteredItemList.addAll(allItemList.sortedByDescending { it.rating })
+                }
+                itemsListAdapter?.submitList(sortedAndFilteredItemList)
+            }, onFailure = {
+                Log.e("e", it.message.toString())
+            })
         }
     }
 

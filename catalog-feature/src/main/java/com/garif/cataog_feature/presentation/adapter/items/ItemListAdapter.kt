@@ -10,11 +10,13 @@ class ItemListAdapter(
     private val navigateToItemFragment: (String) -> Unit,
     private val saveLikedItem: (String) -> Unit,
     private val fragment: CatalogFragment,
+    private val likedItems: List<com.garif.database.model.Item>,
 ) : ListAdapter<Item, ItemHolder>(ItemDiffItemCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): ItemHolder = ItemHolder.create(parent, navigateToItemFragment, saveLikedItem, fragment)
+    ): ItemHolder =
+        ItemHolder.create(parent, navigateToItemFragment, saveLikedItem, fragment, likedItems)
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) =
         holder.bind(getItem(position))

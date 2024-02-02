@@ -1,8 +1,423 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ItemFragment">
+    android:fillViewport="true">
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ItemFragment">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x3"
+            android:layout_marginTop="@dimen/x2"
+            android:src="@drawable/back_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            android:layout_marginEnd="@dimen/x2"
+            android:src="@drawable/share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/iv_like"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x3"
+            android:layout_marginEnd="@dimen/x2"
+            android:src="@drawable/not_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_share" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_photo"
+            style="@style/CardViewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x18"
+            android:layout_marginHorizontal="@dimen/x3"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_like">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager_photos"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_photos"
+            style="@style/TabLayoutPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x2"
+            android:layout_marginTop="@dimen/x3"
+            android:background="@drawable/tab_layout_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_photo"
+            app:tabBackground="@drawable/tab_selector" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x0_5"
+            android:layout_marginBottom="@dimen/x2"
+            android:src="@drawable/question"
+            app:layout_constraintBottom_toBottomOf="@id/cv_photo"
+            app:layout_constraintStart_toStartOf="@id/cv_photo" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/Text.Size16.Caption.RobotoMedium.Weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_photos"
+            tools:text="ESFOLIO" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            style="@style/Text.Size20.Primary.RobotoMedium.Weight500"
+            android:layout_width="@dimen/x0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="ESFOLIO" />
+
+        <TextView
+            android:id="@+id/tv_available"
+            style="@style/Text.Size12.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            tools:text="Доступно для заказа 30 штук" />
+
+        <View
+            android:id="@+id/divider"
+            style="@style/Divider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x0_125"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            app:layout_constraintTop_toBottomOf="@id/tv_available" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/rating_bar"
+            style="@style/Widget.MaterialRatingBar.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            android:numStars="5"
+            android:progressTint="@color/orange"
+            android:stepSize="0.1"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:mrb_indeterminateTint="@color/orange"
+            app:mrb_progressBackgroundTint="@color/orange"
+            app:mrb_secondaryProgressTint="@color/orange"
+            tools:rating="3.7"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            style="@style/Text.Size12.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            android:layout_marginTop="@dimen/x1"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="4.3"
+            tools:visibility="visible" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            android:src="@drawable/dot"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tv_rating"
+            app:layout_constraintStart_toEndOf="@id/tv_rating"
+            app:layout_constraintTop_toTopOf="@id/tv_rating"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_feedback_count"
+            style="@style/Text.Size12.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            android:layout_marginTop="@dimen/x1"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/iv_dot"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="4 отзыва"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_price_with_discount"
+            style="@style/Text.Size24.Primary.RobotoMedium.Weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar"
+            tools:text="899 Р" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/Text.Size12.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x1"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price_with_discount"
+            app:layout_constraintStart_toEndOf="@id/tv_price_with_discount"
+            app:layout_constraintTop_toTopOf="@id/tv_price_with_discount"
+            tools:text="899 Р" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/DiscountMaterialCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x0"
+            android:layout_marginStart="@dimen/x1_5"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            app:layout_constraintStart_toEndOf="@id/tv_price"
+            app:layout_constraintTop_toTopOf="@id/tv_price">
+
+            <TextView
+                android:id="@+id/tv_discount"
+                style="@style/Text.Size9.Discount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/x1"
+                android:gravity="center"
+                tools:text="-35%" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_description"
+            style="@style/Text.Size16.Primary.RobotoMedium.Weight500"
+            android:layout_width="@dimen/x0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x3"
+            android:text="@string/description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_with_discount" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_title"
+            style="@style/TitleMaterialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_title_in_btn"
+                    style="@style/Text.Size14.Primary.RobotoMedium.Weight500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/x1"
+                    android:layout_marginVertical="@dimen/x2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Title" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/x2"
+                    android:src="@drawable/next_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tv_descripion_value"
+            style="@style/Text.Size12.Primary"
+            android:layout_width="@dimen/x0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cv_title"
+            tools:text="Пенка для лица Глубокое очищение содержит минеральную воду и соду, способствует глубокому очищению пор от различных загрязнений, контролирует работу сальных желез, сужает поры. Обладает мягким антисептическим действием, не пересушивая кожу. Минеральная вода тонизирует и смягчает кожу." />
+
+        <TextView
+            android:id="@+id/tv_hide_or_more_description"
+            style="@style/Text.Size12.Caption.RobotoMedium.Weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            android:text="@string/hide"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_descripion_value" />
+
+        <TextView
+            android:id="@+id/tv_characteristics"
+            style="@style/Text.Size16.Primary.RobotoMedium.Weight500"
+            android:layout_width="@dimen/x0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x4"
+            android:text="@string/characteristics"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hide_or_more_description" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/characteristics"
+            style="@style/VerticalRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x3"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/tv_composition"
+            app:layout_constraintTop_toBottomOf="@id/tv_characteristics"
+            tools:itemCount="3"
+            tools:listitem="@layout/characteristic_item" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x3"
+            android:layout_marginEnd="@dimen/x2"
+            android:src="@drawable/copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics" />
+
+        <TextView
+            android:id="@+id/tv_composition"
+            style="@style/Text.Size16.Primary.RobotoMedium.Weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x3"
+            android:text="@string/composition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/characteristics" />
+
+        <TextView
+            android:id="@+id/tv_composition_value"
+            style="@style/Text.Size12.Text.EllipsizeEnd"
+            android:layout_width="@dimen/x0"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_composition"
+            tools:text="Пенка для лица Глубокое очищение содержит минеральную воду и соду, способствует глубокому очищению пор от различных загрязнений, контролирует работу сальных желез, сужает поры. Обладает мягким антисептическим действием, не пересушивая кожу. Минеральная вода тонизирует и смягчает кожу." />
+
+        <TextView
+            android:id="@+id/tv_hide_or_more_composition"
+            style="@style/Text.Size12.Caption.RobotoMedium.Weight500"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x2"
+            android:layout_marginTop="@dimen/x1"
+            android:text="@string/more"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_composition_value" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_add_to_cart"
+            style="@style/AddToCartMaterialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/x2"
+            android:layout_marginTop="@dimen/x4"
+            android:layout_marginBottom="@dimen/x1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_hide_or_more_composition">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_price_with_discount_in_btn"
+                    style="@style/Text.Size14.White.RobotoMedium.Weight500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/x2"
+                    android:layout_marginStart="@dimen/x2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="899 Р" />
+
+                <TextView
+                    android:id="@+id/tv_price_in_btn"
+                    style="@style/Text.Size10.LightPink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/x1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_price_with_discount_in_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="899 Р" />
+
+                <TextView
+                    android:id="@+id/tv_add_to_cart"
+                    style="@style/Text.Size14.White.RobotoMedium.Weight500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/x2"
+                    android:layout_marginEnd="@dimen/x2"
+                    android:text="@string/add_to_cart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

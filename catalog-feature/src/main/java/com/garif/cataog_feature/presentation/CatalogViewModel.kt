@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.garif.cataog_feature.domain.entity.Item as EntityItem
 import com.garif.database.model.Item
 import com.garif.cataog_feature.domain.usecase.GetItemsUseCase
+import com.garif.cataog_feature.domain.usecase.GetLikedItemsUseCase
 import com.garif.cataog_feature.domain.usecase.SaveLikedItemUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,7 +15,11 @@ import javax.inject.Inject
 class CatalogViewModel @Inject constructor(
     private val saveLikedItemUseCase: SaveLikedItemUseCase,
     private val getItemsUseCase: GetItemsUseCase,
+    private val getLikedItemsUseCase: GetLikedItemsUseCase,
 ) : ViewModel() {
+    private var _likedItems: MutableLiveData<Result<List<Item>>> = MutableLiveData()
+    val likedItems: LiveData<Result<List<Item>>> = _likedItems
+
     private var _items: MutableLiveData<Result<MutableList<EntityItem>>> = MutableLiveData()
     val items: LiveData<Result<MutableList<EntityItem>>> = _items
 
@@ -38,6 +43,18 @@ class CatalogViewModel @Inject constructor(
             try {
                 saveLikedItemUseCase(item)
             } catch (ex: Exception) {
+                _error.value = ex
+            }
+        }
+    }
+
+    fun onGetLikedItem() {
+        viewModelScope.launch {
+            try {
+                val likedItems = getLikedItemsUseCase()
+                _likedItems.value = Result.success(likedItems)
+            } catch (ex: Exception) {
+                _likedItems.value = Result.failure(ex)
                 _error.value = ex
             }
         }

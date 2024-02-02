@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.garif.cataog_feature.domain.entity.Item
 import com.garif.cataog_feature.presentation.CatalogFragment
 import com.garif.cataog_feature.presentation.adapter.CustomPagerAdapter
+import com.garif.core.PhotoMapper
 import com.garif.core.databinding.ItemBinding
 
 
@@ -17,6 +18,7 @@ class ItemHolder(
     private val navigateToItemFragment: (String) -> Unit,
     private val saveLikedItem: (String) -> Unit,
     private val fragment: CatalogFragment,
+    private val likedItems: List<com.garif.database.model.Item>,
 ) : RecyclerView.ViewHolder(binding.root) {
     private var item: Item? = null
 
@@ -42,14 +44,14 @@ class ItemHolder(
 
             tlPhotos.setupWithViewPager(viewPager, true)
 
-            ivLike.setOnClickListener {
-                ivLike.setImageDrawable(
-                    ContextCompat.getDrawable(
-                        fragment.requireContext(),
-                        com.garif.core.R.drawable.like
-                    )
-                )
-                item.id.also(saveLikedItem)
+            for (likedItem in likedItems) {
+                if (likedItem.id == item.id)
+                    setImageLike()
+                else
+                    ivLike.setOnClickListener {
+                        setImageLike()
+                        item.id.also(saveLikedItem)
+                    }
             }
 
 
@@ -73,6 +75,18 @@ class ItemHolder(
         }
     }
 
+    private fun setImageLike() {
+        with(binding) {
+            ivLike.setImageDrawable(
+                ContextCompat.getDrawable(
+                    fragment.requireContext(),
+                    com.garif.core.R.drawable.like
+                )
+            )
+        }
+    }
+
+
     companion object {
 
         fun create(
@@ -80,12 +94,13 @@ class ItemHolder(
             navigateToItemFragment: (String) -> Unit,
             saveLikedItem: (String) -> Unit,
             fragment: CatalogFragment,
+            likedItems: List<com.garif.database.model.Item>,
         ) = ItemHolder(
             ItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ), navigateToItemFragment, saveLikedItem, fragment
+            ), navigateToItemFragment, saveLikedItem, fragment, likedItems
         )
     }
 }

@@ -2,6 +2,8 @@ package com.garif.teststore.presentation
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -77,6 +79,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                     )
                 )
                 val intent = Intent(requireActivity(), MainActivityWithMenu::class.java)
+                intent.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }
         }
@@ -87,6 +90,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
             it.fold(onSuccess = {
                 if (it != null) {
                     val intent = Intent(requireActivity(), MainActivityWithMenu::class.java)
+                    intent.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK
                     intent.putExtra(getString(com.garif.core.R.string.is_load_catalog), true)
                     startActivity(intent)
                 } else {

@@ -72,7 +72,7 @@
 
             <TextView
                 android:id="@+id/tv_price_with_discount"
-                style="@style/Text.Size14.Primary.RobotoMedium"
+                style="@style/Text.Size14.Primary.RobotoMedium.Weight500"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/x1"
@@ -102,7 +102,7 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                style="@style/Text.Size12.Primary.RobotoMedium"
+                style="@style/Text.Size12.Primary.RobotoMedium.Weight500"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/x1"
@@ -116,9 +116,8 @@
                 style="@style/Text.Size10.Text"
                 android:layout_width="@dimen/x0"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/x1"
                 android:layout_marginTop="@dimen/x0_5"
-                android:layout_marginEnd="@dimen/x1"
+                android:layout_marginHorizontal="@dimen/x1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"

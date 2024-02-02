@@ -4,7 +4,6 @@ data class Item(
     val id: String,
     val title: String,
     val subtitle: String,
-    var isLike: Boolean = false,
     var price: Int,
     val priceWithDiscount: Int,
     val discount: String,

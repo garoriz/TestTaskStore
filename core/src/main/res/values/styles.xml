@@ -15,6 +15,10 @@
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
 
+    <style name="Text.Size16.Primary.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
     <style name="TextInputLayout" parent="Widget.Material3.TextInputLayout.FilledBox">
         <item name="boxCornerRadiusBottomEnd">@dimen/x1</item>
         <item name="boxCornerRadiusBottomStart">@dimen/x1</item>
@@ -43,6 +47,10 @@
         <item name="android:textSize">@dimen/size10</item>
     </style>
 
+    <style name="Text.Size10.LightPink">
+        <item name="android:textColor">@color/light_pink</item>
+    </style>
+
     <style name="Text.Size10.Caption">
         <item name="android:textColor">@color/grey</item>
     </style>
@@ -57,6 +65,18 @@
 
     <style name="Text.Size14">
         <item name="android:textSize">@dimen/size14</item>
+    </style>
+
+    <style name="Text.Size14.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size14.White.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size14.White.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
     </style>
 
     <style name="Text.Size14.Text">
@@ -108,11 +128,29 @@
     <style name="Text.Size14.Primary.RobotoMedium">
         <item name="android:font">@font/roboto_medium</item>
     </style>
+
+    <style name="Text.Size14.Primary.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
     
     <style name="DiscountMaterialCardView">
         <item name="cardCornerRadius">@dimen/x0_5</item>
         <item name="cardBackgroundColor">@color/pink</item>
         <item name="strokeWidth">@dimen/x0</item>
+    </style>
+
+    <style name="TitleMaterialCardView">
+        <item name="cardCornerRadius">@dimen/x1</item>
+        <item name="cardBackgroundColor">@color/light_grey</item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+    </style>
+
+    <style name="AddToCartMaterialCardView">
+        <item name="cardCornerRadius">@dimen/x1</item>
+        <item name="cardBackgroundColor">@color/pink</item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
     </style>
 
     <style name="Text.Size9.Discount">
@@ -131,6 +169,10 @@
         <item name="android:font">@font/roboto_medium</item>
     </style>
 
+    <style name="Text.Size12.Primary.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
     <style name="Text.Size10.Text">
         <item name="android:textColor">@color/dark_grey</item>
     </style>
@@ -147,5 +189,90 @@
         <item name="cardCornerRadius">@dimen/x1</item>
         <item name="strokeWidth">@dimen/x0_125</item>
         <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="Text.Size12.Caption">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="Text.Size12.Caption.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size12.Caption.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="Text.Size20">
+        <item name="android:textSize">@dimen/size20</item>
+    </style>
+
+    <style name="Text.Size20.Primary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Size20.Primary.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size20.Primary.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">@color/grey</item>
+    </style>
+
+    <style name="Text.Size24">
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+
+    <style name="Text.Size24.Primary">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Size12.Text">
+        <item name="android:textColor">@color/dark_grey</item>
+    </style>
+
+    <style name="Text.Size12.Text.EllipsizeEnd">
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="Text.Size24.Primary.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size24.Primary.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="Text.Size16.Caption">
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="Text.Size16.Caption.RobotoMedium">
+        <item name="android:font">@font/roboto_medium</item>
+    </style>
+
+    <style name="Text.Size16.Caption.RobotoMedium.Weight500">
+        <item name="android:textFontWeight">500</item>
+    </style>
+
+    <style name="CardViewBtnTitle">
+        <item name="shapeAppearanceOverlay">
+            @style/ShapeAppearanceOverlay_card_custom_corners_x2
+        </item>
+        <item name="strokeWidth">@dimen/x0</item>
+        <item name="cardElevation">@dimen/x0</item>
+        <item name="cardBackgroundColor">@color/light_grey</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners_x2" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">@dimen/x1</item>
+        <item name="cornerSizeTopLeft">@dimen/x1</item>
+        <item name="cornerSizeBottomRight">@dimen/x1</item>
+        <item name="cornerSizeBottomLeft">@dimen/x1</item>
     </style>
 </resources>

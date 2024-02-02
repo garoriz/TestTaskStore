@@ -5,6 +5,7 @@
     <dimen name="x0_25">2dp</dimen>
     <dimen name="x0_5">4dp</dimen>
     <dimen name="x1">8dp</dimen>
+    <dimen name="x1_25">10dp</dimen>
     <dimen name="x1_5">12dp</dimen>
     <dimen name="x2">16dp</dimen>
     <dimen name="x3">24dp</dimen>
@@ -14,4 +15,6 @@
     <dimen name="x12_5">100dp</dimen>
     <dimen name="x17_5">140dp</dimen>
     <dimen name="x18">144dp</dimen>
+    <dimen name="x21">168dp</dimen>
+    <dimen name="x46">368dp</dimen>
 </resources>

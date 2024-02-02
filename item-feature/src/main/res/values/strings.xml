@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">Описание</string>
+    <string name="hide">Скрыть</string>
+    <string name="characteristics">Характеристики</string>
+    <string name="composition">Состав</string>
+    <string name="more">Подробнее</string>
+    <string name="add_to_cart">Добавить в корзину</string>
+    <string name="available_to_order">Доступно для заказа</string>
+    <string name="three_dots">…</string>
+
+    <plurals name="piece">
+        <item quantity="zero">штук</item>
+        <item quantity="one">штука</item>
+        <item quantity="two">штуки</item>
+        <item quantity="few">штук</item>
+        <item quantity="many">штук</item>
+        <item quantity="other">штук</item>
+    </plurals>
+
+    <plurals name="feedback">
+        <item quantity="zero">отзывов</item>
+        <item quantity="one">отзыв</item>
+        <item quantity="two">отзыва</item>
+        <item quantity="few">отзывов</item>
+        <item quantity="many">отзывов</item>
+        <item quantity="other">отзыв</item>
+    </plurals>
+</resources>
