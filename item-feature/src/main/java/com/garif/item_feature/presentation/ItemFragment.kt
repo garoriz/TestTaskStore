@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.garif.core.PhotoMapper
-import com.garif.core.navigationData
+import com.garif.core.navigation.navigationData
 import com.garif.core.util.AppViewModelFactory
 import com.garif.database.model.Item
 import com.garif.item_feature.R
@@ -195,5 +195,5 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
         ).show()
     }
 
-    fun TextView.isEllipsized() = layout.text.toString() != text.toString()
+    private fun TextView.isEllipsized() = layout?.text?.toString() != text?.toString()
 }

@@ -12,4 +12,7 @@ interface UserDao {
 
     @Insert
     suspend fun save(user: User)
+
+    @Query("DELETE FROM user")
+    suspend fun delete()
 }

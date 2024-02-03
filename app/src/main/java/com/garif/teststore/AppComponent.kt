@@ -4,6 +4,7 @@ import android.content.Context
 import com.garif.cataog_feature.di.CatalogFeatureComponent
 import com.garif.item_feature.di.ItemFeatureComponent
 import com.garif.main_feature.di.MainFeatureComponent
+import com.garif.personal_profile_feature.di.PersonalProfileFeatureComponent
 import com.garif.teststore.di.RegistrationFeatureComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -19,6 +20,8 @@ interface AppComponent {
     fun createCatalogComponent(): CatalogFeatureComponent
 
     fun createItemComponent(): ItemFeatureComponent
+
+    fun createPersonalProfileComponent(): PersonalProfileFeatureComponent
 
 
     @Component.Factory

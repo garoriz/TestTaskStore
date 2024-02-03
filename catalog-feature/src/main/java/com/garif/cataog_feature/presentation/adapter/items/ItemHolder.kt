@@ -47,11 +47,10 @@ class ItemHolder(
             for (likedItem in likedItems) {
                 if (likedItem.id == item.id)
                     setImageLike()
-                else
-                    ivLike.setOnClickListener {
-                        setImageLike()
-                        item.id.also(saveLikedItem)
-                    }
+            }
+            ivLike.setOnClickListener {
+                setImageLike()
+                item.id.also(saveLikedItem)
             }
 
 

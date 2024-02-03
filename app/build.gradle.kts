@@ -80,4 +80,6 @@ dependencies {
     implementation(project(":catalog-feature"))
     implementation(project(":network"))
     implementation(project(":item-feature"))
+    implementation(project(":personal-profile-feature"))
+    implementation(project(":favorites-feature"))
 }

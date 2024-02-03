@@ -1,0 +1,18 @@
+<resources>
+    <string name="personal_profile">Личный кабинет</string>
+    <string name="favorites">Избранное</string>
+    <string name="shops">Магазины</string>
+    <string name="feedback">Обратная связь</string>
+    <string name="offer">Оферта</string>
+    <string name="backing_product">Возврат товара</string>
+    <string name="exit">Выйти</string>
+
+    <plurals name="product">
+        <item quantity="zero">товаров</item>
+        <item quantity="one">товар</item>
+        <item quantity="two">товара</item>
+        <item quantity="few">товара</item>
+        <item quantity="many">товаров</item>
+        <item quantity="other">товар</item>
+    </plurals>
+</resources>

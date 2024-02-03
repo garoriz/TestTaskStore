@@ -1,4 +1,4 @@
-package com.garif.core
+package com.garif.core.navigation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,3 +20,4 @@ fun Fragment.navigate(actionId: Int, hostId: Int? = null, data: Serializable? = 
 
 val Fragment.navigationData: Serializable?
     get() = arguments?.getSerializable("navigation data")
+

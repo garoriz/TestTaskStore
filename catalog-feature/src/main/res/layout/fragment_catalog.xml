@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/tv_catalog"
-        style="@style/Text.Size16.Primary.RobotoMedium"
+        style="@style/Text.Size16.Primary.RobotoMedium.Weight500"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/x2"

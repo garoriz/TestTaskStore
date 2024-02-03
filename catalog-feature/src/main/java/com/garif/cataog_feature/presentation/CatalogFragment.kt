@@ -12,7 +12,7 @@ import com.garif.cataog_feature.databinding.FragmentCatalogBinding
 import com.garif.cataog_feature.di.CatalogFeatureComponentProvider
 import com.garif.cataog_feature.domain.entity.Item
 import com.garif.cataog_feature.presentation.adapter.items.ItemListAdapter
-import com.garif.core.navigate
+import com.garif.core.navigation.navigate
 import com.garif.core.util.AppViewModelFactory
 import com.google.android.material.chip.Chip
 import com.google.android.material.snackbar.Snackbar

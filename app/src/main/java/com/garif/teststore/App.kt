@@ -7,11 +7,14 @@ import com.garif.item_feature.di.ItemFeatureComponent
 import com.garif.item_feature.di.ItemFeatureComponentProvider
 import com.garif.main_feature.di.MainFeatureComponent
 import com.garif.main_feature.di.MainFeatureComponentProvider
+import com.garif.personal_profile_feature.di.PersonalProfileFeatureComponent
+import com.garif.personal_profile_feature.di.PersonalProfileFeatureComponentProvider
 import com.garif.teststore.di.RegistrationFeatureComponent
 import com.garif.teststore.di.RegistrationFeatureComponentProvider
 
 class App : Application(), RegistrationFeatureComponentProvider, MainFeatureComponentProvider,
-    CatalogFeatureComponentProvider, ItemFeatureComponentProvider {
+    CatalogFeatureComponentProvider, ItemFeatureComponentProvider,
+    PersonalProfileFeatureComponentProvider {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -33,6 +36,10 @@ class App : Application(), RegistrationFeatureComponentProvider, MainFeatureComp
 
     override fun getItemFeatureComponent(): ItemFeatureComponent {
         return appComponent.createItemComponent()
+    }
+
+    override fun getPersonalProfileFeatureComponent(): PersonalProfileFeatureComponent {
+        return appComponent.createPersonalProfileComponent()
     }
 
 }
