@@ -3,6 +3,8 @@ package com.garif.teststore
 import android.app.Application
 import com.garif.cataog_feature.di.CatalogFeatureComponent
 import com.garif.cataog_feature.di.CatalogFeatureComponentProvider
+import com.garif.favorites_feature.di.FavoritesFeatureComponent
+import com.garif.favorites_feature.di.FavoritesFeatureComponentProvider
 import com.garif.item_feature.di.ItemFeatureComponent
 import com.garif.item_feature.di.ItemFeatureComponentProvider
 import com.garif.main_feature.di.MainFeatureComponent
@@ -14,7 +16,7 @@ import com.garif.teststore.di.RegistrationFeatureComponentProvider
 
 class App : Application(), RegistrationFeatureComponentProvider, MainFeatureComponentProvider,
     CatalogFeatureComponentProvider, ItemFeatureComponentProvider,
-    PersonalProfileFeatureComponentProvider {
+    PersonalProfileFeatureComponentProvider, FavoritesFeatureComponentProvider {
     private lateinit var appComponent: AppComponent
 
     override fun onCreate() {
@@ -40,6 +42,10 @@ class App : Application(), RegistrationFeatureComponentProvider, MainFeatureComp
 
     override fun getPersonalProfileFeatureComponent(): PersonalProfileFeatureComponent {
         return appComponent.createPersonalProfileComponent()
+    }
+
+    override fun getFavoritesFeatureComponent(): FavoritesFeatureComponent {
+        return appComponent.createFavoritesComponent()
     }
 
 }

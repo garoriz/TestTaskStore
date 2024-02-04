@@ -1,22 +1,21 @@
-package com.garif.cataog_feature.presentation.adapter.items
+package com.garif.favorites_feature.presentation.adapter.items
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.garif.cataog_feature.domain.entity.Item
-import com.garif.cataog_feature.presentation.CatalogFragment
-import com.garif.cataog_feature.presentation.diffutils.ItemDiffItemCallback
+import com.garif.favorites_feature.domain.entity.Item
+import com.garif.favorites_feature.presentation.FavoritesFragment
+import com.garif.favorites_feature.presentation.diffutil.ItemDiffItemCallback
 
 class ItemListAdapter(
     private val navigateToItemFragment: (String) -> Unit,
-    private val saveLikedItem: (String) -> Unit,
-    private val fragment: CatalogFragment,
-    private val likedItems: MutableList<com.garif.database.model.Item>,
+    private val deleteLikedItem: (String) -> Unit,
+    private val fragment: FavoritesFragment,
 ) : ListAdapter<Item, ItemHolder>(ItemDiffItemCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
     ): ItemHolder =
-        ItemHolder.create(parent, navigateToItemFragment, saveLikedItem, fragment, likedItems)
+        ItemHolder.create(parent, navigateToItemFragment, deleteLikedItem, fragment)
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) =
         holder.bind(getItem(position))

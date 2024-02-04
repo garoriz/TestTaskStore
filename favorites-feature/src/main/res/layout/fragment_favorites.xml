@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.FavoritesFragment">
 
-</FrameLayout>
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x3"
+        android:src="@drawable/back_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_favorites"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_favorites" />
+
+    <TextView
+        android:id="@+id/tv_favorites"
+        style="@style/Text.Size16.Primary.RobotoMedium.Weight500"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x2"
+        android:text="@string/favorites"
+        android:layout_marginStart="@dimen/x4"
+        app:layout_constraintStart_toEndOf="@id/iv_back"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+        android:id="@+id/productsOrBrandsButtonGroup"
+        style="@style/SegmentedButtonGroupRippleFalse.ProductsOrBrandsSegmentedBtnGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x2"
+        android:layout_marginTop="@dimen/x3"
+        app:layout_constraintTop_toBottomOf="@id/tv_favorites"
+        android:background="@color/light_grey"
+        android:visibility="visible"
+        app:position="0">
+
+        <com.addisonelliott.segmentedbutton.SegmentedButton
+            style="@style/SegmentedButton.ProductsOrBrandsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:text="@string/products" />
+
+        <com.addisonelliott.segmentedbutton.SegmentedButton
+            style="@style/SegmentedButton.ProductsOrBrandsBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:text="@string/brands" />
+
+    </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/items"
+        style="@style/VerticalRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x0"
+        android:layout_marginStart="@dimen/x2"
+        android:layout_marginTop="@dimen/x2"
+        android:layout_marginEnd="@dimen/x1"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productsOrBrandsButtonGroup"
+        app:spanCount="2"
+        tools:itemCount="6"
+        tools:listitem="@layout/item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

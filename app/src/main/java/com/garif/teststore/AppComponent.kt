@@ -2,6 +2,7 @@ package com.garif.teststore
 
 import android.content.Context
 import com.garif.cataog_feature.di.CatalogFeatureComponent
+import com.garif.favorites_feature.di.FavoritesFeatureComponent
 import com.garif.item_feature.di.ItemFeatureComponent
 import com.garif.main_feature.di.MainFeatureComponent
 import com.garif.personal_profile_feature.di.PersonalProfileFeatureComponent
@@ -22,6 +23,8 @@ interface AppComponent {
     fun createItemComponent(): ItemFeatureComponent
 
     fun createPersonalProfileComponent(): PersonalProfileFeatureComponent
+
+    fun createFavoritesComponent(): FavoritesFeatureComponent
 
 
     @Component.Factory

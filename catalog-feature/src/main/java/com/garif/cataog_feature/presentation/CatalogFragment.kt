@@ -72,16 +72,25 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
                 when (menuItem.itemId) {
                     R.id.by_popular -> {
                         sortedAndFilteredItemList.sortByDescending { it.rating }
+                        binding.items.run {
+                            adapter = itemsListAdapter
+                        }
                         itemsListAdapter?.submitList(sortedAndFilteredItemList)
                     }
 
                     R.id.by_decrease_price -> {
                         sortedAndFilteredItemList.sortByDescending { it.priceWithDiscount }
+                        binding.items.run {
+                            adapter = itemsListAdapter
+                        }
                         itemsListAdapter?.submitList(sortedAndFilteredItemList)
                     }
 
                     R.id.by_increase_price -> {
                         sortedAndFilteredItemList.sortBy { it.priceWithDiscount }
+                        binding.items.run {
+                            adapter = itemsListAdapter
+                        }
                         itemsListAdapter?.submitList(sortedAndFilteredItemList)
                     }
                 }
@@ -133,7 +142,7 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
     private fun initObservers() {
         viewModel.likedItems.observe(viewLifecycleOwner) { it ->
             it.fold(onSuccess = {
-                initItemsObservers(it)
+                initItemsObservers(it as MutableList<com.garif.database.model.Item>)
             }, onFailure = {
                 Log.e("e", it.message.toString())
             })
@@ -148,7 +157,7 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
         }
     }
 
-    private fun initItemsObservers(likedItems: List<com.garif.database.model.Item>) {
+    private fun initItemsObservers(likedItems: MutableList<com.garif.database.model.Item>) {
         viewModel.items.observe(viewLifecycleOwner) { items ->
             items.fold(onSuccess = { responseItems ->
                 itemsListAdapter = ItemListAdapter({
@@ -177,16 +186,25 @@ class CatalogFragment : Fragment(R.layout.fragment_catalog) {
             when (tvSortDescription.text) {
                 getString(R.string.by_popular) -> {
                     sortedAndFilteredItemList.sortByDescending { it.rating }
+                    binding.items.run {
+                        adapter = itemsListAdapter
+                    }
                     itemsListAdapter?.submitList(sortedAndFilteredItemList)
                 }
 
                 getString(com.garif.core.R.string.by_decrease_price) -> {
                     sortedAndFilteredItemList.sortByDescending { it.priceWithDiscount }
+                    binding.items.run {
+                        adapter = itemsListAdapter
+                    }
                     itemsListAdapter?.submitList(sortedAndFilteredItemList)
                 }
 
                 else -> {
                     sortedAndFilteredItemList.sortBy { it.priceWithDiscount }
+                    binding.items.run {
+                        adapter = itemsListAdapter
+                    }
                     itemsListAdapter?.submitList(sortedAndFilteredItemList)
                 }
             }

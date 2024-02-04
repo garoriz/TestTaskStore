@@ -51,8 +51,6 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
             ivBack.setOnClickListener {
                 findNavController().popBackStack()
             }
-
-            ivLike.setOnClickListener { }
         }
 
         initObservers()

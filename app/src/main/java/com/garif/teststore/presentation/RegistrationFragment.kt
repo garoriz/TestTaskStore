@@ -82,6 +82,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration) {
                 intent.flags = FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
             }
+            btnSignIn.isClickable = false
         }
     }
 

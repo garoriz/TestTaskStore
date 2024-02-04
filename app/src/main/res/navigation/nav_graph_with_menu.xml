@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph_with_menu"
-    app:startDestination="@id/favoritesFragment">
+    android:id="@+id/nav_graph_with_menu">
 
     <fragment
         android:id="@+id/navigation_main"
@@ -39,5 +38,9 @@
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.garif.favorites_feature.presentation.FavoritesFragment"
-        android:label="FavoritesFragment" />
+        android:label="FavoritesFragment" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+    </fragment>
 </navigation>
